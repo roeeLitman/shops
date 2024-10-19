@@ -1,6 +1,9 @@
 import  express,{Express}  from "express";
 import "dotenv/config";
 import cookie from 'cookie-parser'
+import rootSeller from "./routes/routeSeller";
+import rootClient from "./routes/rootClient";
+import rootMessenger from "./routes/rootMessenger";
 
 const PORT:number = (process.env.PORT  || 1414) as number
 
