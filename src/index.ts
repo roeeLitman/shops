@@ -22,10 +22,8 @@ app.use('/messenger',rootMessenger)
 app.listen(
     PORT,
     (): void => {
-        console.log(`http://localhost:27017${PORT}`);
+        console.log(`http://localhost:${PORT}`);
          
 })
 
-function connectDB() {
-    throw new Error("Function not implemented.");
-}
+

@@ -19,8 +19,5 @@ app.use('/seller', routeSeller_1.default);
 app.use('client', rootClient_1.default);
 app.use('/messenger', rootMessenger_1.default);
 app.listen(PORT, () => {
-    console.log(`http://localhost:27017${PORT}`);
+    console.log(`http://localhost:${PORT}`);
 });
-function connectDB() {
-    throw new Error("Function not implemented.");
-}
