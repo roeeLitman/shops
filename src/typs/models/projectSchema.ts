@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose"
 export interface IProject {
     name: string,
     prase: number,
-    store: mongoose.Types.ObjectId
+    store?: mongoose.Types.ObjectId
     imge?: string,
 }
 
@@ -30,6 +30,6 @@ export const projectSchema = new Schema<IProject>({
     }
 })
 
-const ModelProject: mongoose.Model<IProject> =  mongoose.model<IProject>("Project" ,projectSchema)
+const ProjectModel: mongoose.Model<IProject> =  mongoose.model<IProject>("Project" ,projectSchema)
 
-export default ModelProject
+export default ProjectModel

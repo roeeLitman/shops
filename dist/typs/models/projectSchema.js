@@ -46,5 +46,5 @@ exports.projectSchema = new mongoose_1.Schema({
         ref: "Store"
     }
 });
-const ModelProject = mongoose_1.default.model("Project", exports.projectSchema);
-exports.default = ModelProject;
+const ProjectModel = mongoose_1.default.model("Project", exports.projectSchema);
+exports.default = ProjectModel;
