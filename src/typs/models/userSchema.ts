@@ -6,7 +6,7 @@ export interface IUser{
     password:string,
     email: string
     store: mongoose.Types.ObjectId[]
-    yourOrder: IOrder []
+    yourOrder: mongoose.Types.ObjectId
     isActiv: Boolean
 }
 
@@ -30,7 +30,8 @@ export const userSchema = new Schema<IUser>({
     },
 
     yourOrder:{
-        type: [orderSchema],
+        type: Schema.Types.ObjectId ,
+        ref: 'Order',
         required: [true, 'enter id store']
     },
 

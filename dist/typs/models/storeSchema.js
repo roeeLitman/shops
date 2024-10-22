@@ -25,8 +25,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.storeSchema = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const projectSchema_1 = require("./projectSchema");
-const orderSchema_1 = require("./orderSchema");
 exports.storeSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -38,13 +36,14 @@ exports.storeSchema = new mongoose_1.Schema({
         required: [true, "enter id owner"],
     },
     objects: {
-        type: [projectSchema_1.projectSchema],
-        required: [true, "enter prase"],
-        min: [2, "name is shorts"]
+        type: [mongoose_1.default.Schema.Types.ObjectId],
+        required: [true, "enter id of order"],
+        ref: "Project"
     },
     orders: {
-        type: [orderSchema_1.orderSchema],
-        required: false,
+        type: [mongoose_1.default.Schema.Types.ObjectId],
+        required: [true, "enter id of order"],
+        ref: "Order"
     },
     isActiv: {
         type: Boolean,

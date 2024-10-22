@@ -21,4 +21,9 @@ export const orderSchema = new Schema<IOrder>({
         type: Date,
         required: false,  
     }
+
 })
+
+const OrderModel: mongoose.Model<IOrder> =  mongoose.model<IOrder>("Order" ,orderSchema)
+
+export default OrderModel

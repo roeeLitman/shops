@@ -5,8 +5,8 @@ import { IOrder, orderSchema } from "./orderSchema"
 export interface IStore {
     name: string,
     owner: mongoose.Types.ObjectId
-    objects: IProject[],
-    orders: IOrder[]
+    objects: mongoose.Types.ObjectId[],
+    orders: mongoose.Types.ObjectId[]
     isActiv:boolean
 }
 
@@ -21,13 +21,14 @@ export const storeSchema = new Schema<IStore>({
         required: [true, "enter id owner"],
     },
     objects:{
-        type: [projectSchema],
-        required: [true, "enter prase"],
-        min: [2, "name is shorts"]
+        type: [mongoose.Schema.Types.ObjectId],
+        required: [true, "enter id of order"],
+        ref: "Project"
     },
     orders:{
-        type: [orderSchema],
-        required: false,
+        type: [mongoose.Schema.Types.ObjectId],
+        required: [true, "enter id of order"],
+        ref: "Order"
     },
 
     isActiv:{
