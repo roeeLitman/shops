@@ -8,6 +8,8 @@ export const createSeller = async (req: Request<any, any, createSellerDTO>, res:
         console.log(req.body);
         
         const newSeler: ResponseDTO = await SelerService.create(req.body)
+        console.log(newSeler);
+        
         res.status(newSeler.status).json(newSeler)
     } catch (err) {
         console.log(err);

@@ -9,7 +9,6 @@ class SelerService {
         try {
             // to hnhsh password
             //add seler from db
-            console.log(sellerFromReq);
             const newSeller = await new userSchema_1.default(sellerFromReq);
             await newSeller.save();
             console.log(newSeller);

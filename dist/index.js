@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 require("dotenv/config");
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const routeSeller_1 = __importDefault(require("./routes/routeSeller"));
 const rootClient_1 = __importDefault(require("./routes/rootClient"));
 const rootMessenger_1 = __importDefault(require("./routes/rootMessenger"));
 const db_1 = __importDefault(require("./config/db"));
@@ -15,9 +16,7 @@ const PORT = (process.env.PORT || 1414);
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 (0, db_1.default)();
-app.use('/seller', (req) => {
-    console.log(req.body);
-});
+app.use('/seller', routeSeller_1.default);
 app.use('/store', rootStore_1.default);
 app.use('client', rootClient_1.default);
 app.use('/messenger', rootMessenger_1.default);

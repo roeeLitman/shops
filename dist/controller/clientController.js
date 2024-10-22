@@ -9,6 +9,7 @@ const createSeller = async (req, res) => {
     try {
         console.log(req.body);
         const newSeler = await SelerService_1.default.create(req.body);
+        console.log(newSeler);
         res.status(newSeler.status).json(newSeler);
     }
     catch (err) {

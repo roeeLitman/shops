@@ -8,8 +8,6 @@ class SelerService {
         try {
             // to hnhsh password
             //add seler from db
-            console.log(sellerFromReq);
-            
             const newSeller = await new UserModel(sellerFromReq)
             await newSeller.save()
 

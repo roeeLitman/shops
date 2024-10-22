@@ -32,12 +32,13 @@ export const userSchema = new Schema<IUser>({
     yourOrder:{
         type: Schema.Types.ObjectId ,
         ref: 'Order',
-        required: [true, 'enter id store']
+        required: false
     },
 
     isActiv:{
         type: Boolean,
         required: [true, "enter status store"],
+        default: () => {return true },
     }
 })
 

@@ -16,8 +16,7 @@ app.use(cookie())
 connectMongo()
 
 
-app.use('/seller', (req) => {console.log(req.body);
-})
+app.use('/seller', rootSeller);
 app.use('/store',rootStore)
 app.use('client',rootClient)
 app.use('/messenger',rootMessenger)

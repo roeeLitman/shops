@@ -46,11 +46,12 @@ exports.userSchema = new mongoose_1.Schema({
     yourOrder: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: 'Order',
-        required: [true, 'enter id store']
+        required: false
     },
     isActiv: {
         type: Boolean,
         required: [true, "enter status store"],
+        default: () => { return true; },
     }
 });
 const UserModel = mongoose_1.default.model("User", exports.userSchema);
