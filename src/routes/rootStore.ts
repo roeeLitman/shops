@@ -3,13 +3,7 @@ import {Response, Router, Request} from "express";
 const rootStore:Router = Router()
 
 // create seller
-rootStore.post('/register', async (req: Request, res: Response) => {
-    try {
-        
-    } catch (err) {
-        
-    }
-})
+rootStore.post('/create', createStore)
 
 //get all order
 rootStore.get('/', async (req: Request, res: Response) => {

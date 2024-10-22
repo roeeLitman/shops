@@ -3,12 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const rootStore = (0, express_1.Router)();
 // create seller
-rootStore.post('/register', async (req, res) => {
-    try {
-    }
-    catch (err) {
-    }
-});
+rootStore.post('/create', createStore);
 //get all order
 rootStore.get('/', async (req, res) => {
     try {
