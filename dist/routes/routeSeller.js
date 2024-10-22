@@ -4,10 +4,6 @@ const express_1 = require("express");
 const rootSeller = (0, express_1.Router)();
 // create seller
 rootSeller.post('/register', async (req, res) => {
-    try {
-    }
-    catch (err) {
-    }
 });
 //get all order
 rootSeller.get('/', async (req, res) => {

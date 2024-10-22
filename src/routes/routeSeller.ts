@@ -3,12 +3,8 @@ import {Response, Router, Request} from "express";
 const rootSeller:Router = Router()
 
 // create seller
-rootSeller.post('/register', async (req: Request, res: Response) => {
-    try {
-        
-    } catch (err) {
-        
-    }
+rootSeller.post('/register', async (req: Request, res: Response):Promise<void> => {
+    
 })
 
 //get all order
