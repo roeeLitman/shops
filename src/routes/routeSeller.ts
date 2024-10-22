@@ -1,11 +1,10 @@
 import {Response, Router, Request} from "express";
+import { createSeller } from "../controller/clientController";
 
 const rootSeller:Router = Router()
 
 // create seller
-rootSeller.post('/register', async (req: Request, res: Response):Promise<void> => {
-    
-})
+rootSeller.post('/register', createSeller)
 
 //get all order
 rootSeller.get('/', async (req: Request, res: Response) => {

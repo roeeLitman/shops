@@ -41,6 +41,6 @@ export const userSchema = new Schema<IUser>({
     }
 })
 
-const StoreModel: mongoose.Model<IUser> =  mongoose.model<IUser>("Store" ,userSchema)
+const UserModel: mongoose.Model<IUser> =  mongoose.model<IUser>("User" ,userSchema)
 
-export default StoreModel
+export default UserModel

@@ -53,5 +53,5 @@ exports.userSchema = new mongoose_1.Schema({
         required: [true, "enter status store"],
     }
 });
-const StoreModel = mongoose_1.default.model("Store", exports.userSchema);
-exports.default = StoreModel;
+const UserModel = mongoose_1.default.model("User", exports.userSchema);
+exports.default = UserModel;

@@ -1,69 +1,28 @@
 import {Response, Router, Request} from "express";
+import { createSeller } from "../controller/clientController";
 
 const rootClient:Router = Router()
 
 // create seller
-rootClient.post('/register', async (req: Request, res: Response) => {
-    try {
-        
-    } catch (err) {
-        
-    }
-})
+rootClient.post('/register', () => {})
 
 //get all order
-rootClient.get('/', async (req: Request, res: Response) => {
-    try {
-        
-    } catch (err) {
-        
-    }
-})
+rootClient.get('/', () => {} )
 
 //geet specifi order
-rootClient.get('/id', async (req: Request, res: Response) => {
-    try {
-        
-    } catch (err) {
-        
-    }
-})
+rootClient.get('/id', () => {} )
 
 // get all order of specifi client
-rootClient.get('/getorder/:id', async (req: Request, res: Response) => {
-    try {
-        
-    } catch (err) {
-        
-    }
-})
+rootClient.get('/getorder/:id', () => {} )
 
 // add product 
-rootClient.put('/', async (req: Request, res: Response) => {
-    try {
-        
-    } catch (err) {
-        
-    }
-})
+rootClient.put('/', () => {} )
 
 // delete prodact
-rootClient.delete('/', async (req: Request, res: Response) => {
-    try {
-        
-    } catch (err) {
-        
-    }
-})
+rootClient.delete('/', () => {} )
 
 //delete shop
-rootClient.delete('/', async (req: Request, res: Response) => {
-    try {
-        
-    } catch (err) {
-        
-    }
-})
+rootClient.delete('/', () => {} )
 
 
 export default rootClient

@@ -1,18 +1,22 @@
-import { Request } from "express";
+import { Request, Response } from "express";
 import ResponseDTO from "../typs/DTO/ResponseDTO";
+import SelerService from "../services/SelerService";
+import { createSellerDTO } from "../typs/DTO/createSellerDTO";
 
-const createSeller = async (req: Request, res: Response): Promise<void> => {
+export const createSeller = async (req: Request<any, any, createSellerDTO>, res: Response): Promise<void> => {
     try {
-        const newSeler: ResponseDTO = async SelerService.create(req.body)
+        console.log(req.body);
+        
+        const newSeler: ResponseDTO = await SelerService.create(req.body)
         res.status(newSeler.status).json(newSeler)
     } catch (err) {
         console.log(err);
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
 }
 
-const getAllSeller = async (req: Request, res: Response): Promise<void> => {}
+export const getAllSeller = async (req: Request, res: Response): Promise<void> => {}
 
-const update = async (req: Request, res: Response): Promise<void> => {}
+export const update = async (req: Request, res: Response): Promise<void> => {}
 
-const deletss = async (req: Request, res: Response): Promise<void> => {}
+export const deletss = async (req: Request, res: Response): Promise<void> => {}

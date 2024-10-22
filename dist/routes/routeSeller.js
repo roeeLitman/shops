@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
+const clientController_1 = require("../controller/clientController");
 const rootSeller = (0, express_1.Router)();
 // create seller
-rootSeller.post('/register', async (req, res) => {
-});
+rootSeller.post('/register', clientController_1.createSeller);
 //get all order
 rootSeller.get('/', async (req, res) => {
     try {
