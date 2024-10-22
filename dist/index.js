@@ -10,12 +10,14 @@ const routeSeller_1 = __importDefault(require("./routes/routeSeller"));
 const rootClient_1 = __importDefault(require("./routes/rootClient"));
 const rootMessenger_1 = __importDefault(require("./routes/rootMessenger"));
 const db_1 = __importDefault(require("./config/db"));
+const rootStore_1 = __importDefault(require("./routes/rootStore"));
 const PORT = (process.env.PORT || 1414);
 const app = (0, express_1.default)();
 (0, db_1.default)();
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 app.use('/seller', routeSeller_1.default);
+app.use('/store', rootStore_1.default);
 app.use('client', rootClient_1.default);
 app.use('/messenger', rootMessenger_1.default);
 app.listen(PORT, () => {

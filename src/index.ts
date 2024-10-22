@@ -5,6 +5,7 @@ import rootSeller from "./routes/routeSeller";
 import rootClient from "./routes/rootClient";
 import rootMessenger from "./routes/rootMessenger";
 import connectMongo from './config/db'
+import rootStore from "./routes/rootStore";
 
 const PORT:number = (process.env.PORT  || 1414) as number
 
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use(cookie())
 
 app.use('/seller',rootSeller)
+app.use('/store',rootStore)
 app.use('client',rootClient)
 app.use('/messenger',rootMessenger)
 
