@@ -1,4 +1,5 @@
 import { createSellerDTO } from "../typs/DTO/createSellerDTO"
+import { createStoreDTO } from "../typs/DTO/createStoreDTO";
 import ResponseDTO from "../typs/DTO/ResponseDTO"
 import StoreModel from "../typs/models/storeSchema";
 
@@ -30,4 +31,4 @@ class StoreService {
     }
 }
 
-export default SelerService
+export default StoreService

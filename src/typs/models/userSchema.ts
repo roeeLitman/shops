@@ -1,12 +1,14 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Schema, Document } from 'mongoose'
 import { IOrder, orderSchema } from './orderSchema'
+import { role } from '../enums/role'
 
-export interface IUser{
+export interface IUser extends Document {
     name: string,
     password:string,
     email: string
-    store: mongoose.Types.ObjectId[]
-    yourOrder: mongoose.Types.ObjectId
+    store?: mongoose.Types.ObjectId[]
+    yourOrder?: mongoose.Types.ObjectId
+    role: role,
     isActiv: Boolean
 }
 
@@ -26,13 +28,19 @@ export const userSchema = new Schema<IUser>({
     },
     store:{
         type: [Schema.Types.ObjectId],
-        required: [true, 'enter id store']
+        required: false
     },
 
     yourOrder:{
         type: Schema.Types.ObjectId ,
         ref: 'Order',
         required: false
+    },
+
+    role:{
+        type: String,
+        required: [true, "enter role"],
+        enum: [role.client, role.seller]
     },
 
     isActiv:{

@@ -25,6 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userSchema = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const role_1 = require("../enums/role");
 exports.userSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -41,12 +42,17 @@ exports.userSchema = new mongoose_1.Schema({
     },
     store: {
         type: [mongoose_1.Schema.Types.ObjectId],
-        required: [true, 'enter id store']
+        required: false
     },
     yourOrder: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: 'Order',
         required: false
+    },
+    role: {
+        type: String,
+        required: [true, "enter role"],
+        enum: [role_1.role.client, role_1.role.seller]
     },
     isActiv: {
         type: Boolean,

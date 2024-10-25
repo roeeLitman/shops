@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deletss = exports.update = exports.getAllSeller = exports.createStore = void 0;
 const createStore = async (req, res) => {
-    const newStore = await StoreService.createStore();
+    // const newStore: ResponseDTO = await StoreService.createStore()
 };
 exports.createStore = createStore;
 const getAllSeller = async (req, res) => { };

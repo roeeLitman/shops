@@ -28,4 +28,4 @@ class StoreService {
         }
     }
 }
-exports.default = SelerService;
+exports.default = StoreService;

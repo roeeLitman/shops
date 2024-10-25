@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
 import ResponseDTO from "../typs/DTO/ResponseDTO";
+import StoreService from "../services/StoreService";
 
 export const createStore = async (req: Request, res: Response): Promise<void> => {
-    const newStore: ResponseDTO = await StoreService.createStore()
+    // const newStore: ResponseDTO = await StoreService.createStore()
 }
 
 export const getAllSeller = async (req: Request, res: Response): Promise<void> => {}

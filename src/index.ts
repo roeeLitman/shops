@@ -6,6 +6,7 @@ import rootClient from "./routes/rootClient";
 import rootMessenger from "./routes/rootMessenger";
 import connectMongo from './config/db'
 import rootStore from "./routes/rootStore";
+import routAuth from "./routes/rootAuth";
 
 const app:Express = express()
 
@@ -16,6 +17,7 @@ app.use(cookie())
 connectMongo()
 
 
+app.use('/auth', routAuth);
 app.use('/seller', rootSeller);
 app.use('/store',rootStore)
 app.use('client',rootClient)
